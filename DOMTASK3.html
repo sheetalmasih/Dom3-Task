@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genrate the rondom Captcha </title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .captcha {
+            height: 1rem;
+            width: 10rem;
+            border: 2px solid rgb(35, 148, 52);
+            /* margin-left: 40rem; */
+            margin-top: 20rem;
+            padding: 2rem;
+            font-size: 2rem;
+            text-align: center;
+        }
+        .btn {
+            margin-left: 2rem;
+            padding: 0.4rem;
+            margin-top: 1rem;
+            width: 10rem;
+        }
+    </style>
+</head>
+<body>
+    <div>
+    <div class="captcha"></div>
+    <button type="button" class="btn" onclick="Code()">Click me</button>
+    </div>
+    <script>{
+            let box = document.querySelector(".captcha");
+            // let str = ''
+            function Code() {
+                let str = ''
+                let a = 1;
+                while (a <= 10) {
+                    let randomCode = Math.floor(Math.random() * 128);
+                    if ((randomCode >= 48 && randomCode <= 57) || (randomCode >= 97 && randomCode <= 122) || (randomCode >= 65 && randomCode <= 90)) {
+                        let ans = String.fromCharCode(randomCode)
+                        str += ans
+                    }
+                    a++;
+                }
+                box.innerHTML = str;
+            }
+        }
+    </script>
+</body>
+
+</html>

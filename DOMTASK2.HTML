@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Change Box</title>
+    <style>
+        .main{
+            display: flex;
+            height:50vh;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        .box{
+            height:10rem;
+            width: 10rem;
+            border: 2px solid black;
+            border-radius: 30px;
+        }
+        .btn{
+            margin-left: 52rem;
+            width: 10rem;
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="box"></div>
+    </div>
+    <button type="button" class="btn" onclick="changeColor()">Click Me</button>
+    <script>
+        let box=document.querySelector(".box")
+        function changeColor(){
+            let red=Math.floor(Math.random()*256)
+            let green=Math.floor(Math.random()*256)
+            let blue=Math.floor(Math.random()*256)
+            let color='rgb('+red +','+green+','+ blue +')';
+            box.style.backgroundColor=color;
+        }
+    </script>
+</body>
+</html>
